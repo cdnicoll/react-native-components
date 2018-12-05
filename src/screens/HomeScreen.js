@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 class HomeScreen extends React.Component {
   render() {
@@ -9,7 +8,7 @@ class HomeScreen extends React.Component {
         <Text>Home Screen</Text>
         <Button
           title="Go to Victory Chart Components"
-          onPress={() => this.props.navigation.navigate("VictoryCharts")}
+          onPress={() => this.props.navigation.navigate("Charts")}
         />
       </View>
     );

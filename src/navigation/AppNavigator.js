@@ -1,12 +1,12 @@
 import { createStackNavigator } from "react-navigation";
 
 import HomeScreen from "../screens/HomeScreen";
-import VictoryChartsScreen from "../screens/VictoryChartsScreen";
+import ChartsScreen from "../screens/ChartsScreen";
 
 export default (AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    VictoryCharts: VictoryChartsScreen,
+    Charts: ChartsScreen,
   },
   {
     initialRouteName: "Home"
