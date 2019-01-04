@@ -10,6 +10,10 @@ class HomeScreen extends React.Component {
           title="Go to Victory Chart Components"
           onPress={() => this.props.navigation.navigate("Charts")}
         />
+        <Button
+          title="Go to Pixel Box"
+          onPress={() => this.props.navigation.navigate("PixelBox")}
+        />
       </View>
     );
   }
