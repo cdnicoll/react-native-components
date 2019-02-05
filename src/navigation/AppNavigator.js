@@ -12,6 +12,6 @@ export default (AppNavigator = createStackNavigator(
     PixelBox: PixelBoxScreen,
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "PixelBox"
   }
 ));

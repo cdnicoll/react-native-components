@@ -16,26 +16,18 @@ class PixelBox extends React.Component {
     };
   }
 
-  componentDidMount() {
-    Animated.timing(
-      // Animate over time
-      this.state.fadeAnim, // The animated value to drive
-      {
-        toValue: 1, // Animate to opacity: 1 (opaque)
-        duration: 10000, // Make it take a while
-      },
-    ).start(); // Starts the animation
-  }
 
-  _onPressButton = () => {
+  _onPress = () => {
     this.setState({
       isToggled: !this.state.isToggled,
     });
+    console.log(!this.state.isToggled);
+    this.props.onPress('poke!');
   };
 
   render() {
     return (
-      <TouchableHighlight onPress={this._onPressButton} underlayColor='black'>
+      <TouchableHighlight onPress={this._onPress} underlayColor='white'>
         <Animated.View
           style={[this.state.isToggled ? styles.squareFilled : styles.square]}
         />
