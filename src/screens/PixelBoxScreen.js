@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Button, Text } from 'react-native';
 import PixelBox from '../components/PixelBox';
+import Panel from '../components/Panel';
 
 const mockData = [
   {
@@ -113,21 +114,24 @@ class PixelBoxScreen extends React.Component {
    * @returns { Array } Array of objects containing PixelBox components
    */
   renderPixels = () => {
-    const max_rows = this._convertToArray(31);
-    const max_cols = this._convertToArray(12);
+    const max_rows = this.convertToArray(31);
+    const max_cols = this.convertToArray(12);
 
     return max_rows.map(row => {
       return (
-        <View key={row} style={{ flexDirection: 'row' }}>
-          {max_cols.map(col => {
-            return (
-              <PixelBox 
-                key={col} 
-                pixelData={this.getPixelObjectBasedOffRowCol(row, col)} 
-                onPress={this.pixelPress} 
-              />
-            );
-          })}
+        <View key={"wrapper_"+row}>
+          <View key={"row_"+row} style={{ flexDirection: 'row' }}>
+            {max_cols.map(col => {
+              return (
+                <PixelBox 
+                  key={col} 
+                  pixelData={this.getPixelObjectBasedOffRowCol(row, col)} 
+                  onPress={this.pixelPress} 
+                />
+              );
+            })}
+          </View>
+          <Panel key={"panel_"+row}><Text>this is a test</Text></Panel>
         </View>
       );
     });

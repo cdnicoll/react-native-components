@@ -21,12 +21,12 @@ class Panel extends React.Component {
     // We set the initial and final value, in here we are using the limits
     // from the previous steps. If the component is expanded we set the
     // height to the minimal value, otherwise to the maximum value.
-    // let initialValue = this.state.expanded
-    //   ? this.state.maxHeight + this.state.minHeight
-    //   : this.state.minHeight;
-    // let finalValue = this.state.expanded
-    //   ? this.state.minHeight
-    //   : this.state.maxHeight + this.state.minHeight;
+    let initialValue = this.state.expanded
+      ? this.state.maxHeight + this.state.minHeight
+      : this.state.minHeight;
+    let finalValue = this.state.expanded
+      ? this.state.minHeight
+      : this.state.maxHeight + this.state.minHeight;
 
     this.setState({
       expanded: !this.state.expanded,
@@ -55,7 +55,7 @@ class Panel extends React.Component {
   render() {
     // let icon = this.icons.down;
     if (this.state.expanded) {
-    //   icon = this.icons.up;
+      //   icon = this.icons.up;
     }
 
     return (
