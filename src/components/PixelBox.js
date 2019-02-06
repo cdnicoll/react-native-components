@@ -1,21 +1,19 @@
 import React from 'react';
 import {
   Animated,
-  Easing,
-  View,
   StyleSheet,
   TouchableHighlight,
-  Alert,
 } from 'react-native';
 
 class PixelBox extends React.Component {
   constructor(props) {
     super(props);
+    const isToggled = this.props.pixelData ? true : false;
+    console.log(isToggled);
     this.state = {
-      isToggled: false,
-    };
+      isToggled
+    }
   }
-
 
   _onPress = () => {
     this.setState({
@@ -38,17 +36,17 @@ class PixelBox extends React.Component {
 
 const styles = StyleSheet.create({
   square: {
-    margin: 5,
-    width: 30,
-    height: 30,
+    margin: 2,
+    width: 25,
+    height: 25,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: 'blue',
   },
   squareFilled: {
-    margin: 5,
-    width: 30,
-    height: 30,
+    margin: 2,
+    width: 25,
+    height: 25,
     backgroundColor: 'red',
     borderRadius: 5,
     borderWidth: 1,
